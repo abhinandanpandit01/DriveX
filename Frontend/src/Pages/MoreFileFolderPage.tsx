@@ -60,14 +60,18 @@ function MoreFileFolder() {
       )}
       <div className="">
         <LocationIndicator />
-        <FolderWrapper
-          allFoldersAndFiles={filesAndFolders!}
-          insideFolder={true}
-        />
-        <FileWrapper
-          allFoldersAndFiles={filesAndFolders!}
-          insideFolder={true}
-        />
+        {filesAndFolders?.allFolders.length ? (
+          <FolderWrapper
+            allFoldersAndFiles={filesAndFolders!}
+            insideFolder={true}
+          />
+        ) : null}
+        {filesAndFolders?.allFiles.length ? (
+          <FileWrapper
+            allFoldersAndFiles={filesAndFolders!}
+            insideFolder={true}
+          />
+        ) : null}
       </div>
     </div>
   );

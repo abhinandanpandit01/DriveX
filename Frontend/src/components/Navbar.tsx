@@ -21,7 +21,7 @@ function Navbar() {
           to={currentUser?.user ? `/drive/user/${currentUser.user._id}` : ""}
           className="lg:text-6xl text-3xl font-bold text-[#EEEEEE]"
         >
-          Driver<span className="text-[#76ABAE]">X</span>
+          Drive<span className="text-[#76ABAE]">X</span>
         </NavLink>
       </div>
       {currentUser?.isLoggedIn ? (

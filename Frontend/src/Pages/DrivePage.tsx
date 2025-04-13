@@ -62,11 +62,15 @@ function DrivePage() {
       )}
       <div className="w-full h-full pl-5 pr-5 pb-8 flex flex-col gap-[2rem] lg:col-[2_/_3]">
         <LocationIndicator />
-        <FolderWrapper
-          allFoldersAndFiles={allFoldersAndFiles!}
-          insideFolder={false}
-        />
-        <FileWrapper allFoldersAndFiles={allFoldersAndFiles!} />
+        {allFoldersAndFiles?.allFolders.length ? (
+          <FolderWrapper
+            allFoldersAndFiles={allFoldersAndFiles!}
+            insideFolder={false}
+          />
+        ) : null}
+        {allFoldersAndFiles?.allFiles.length ? (
+          <FileWrapper allFoldersAndFiles={allFoldersAndFiles!} />
+        ) : null}
       </div>
     </div>
   );
